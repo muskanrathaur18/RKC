@@ -8,45 +8,45 @@
   .cnc-machine-track {
     display: flex;
     width: 100%;
+    gap: 0.5rem; /* Reduced gap between cards */
   }
   
   .cnc-machine-slide {
     flex: 0 0 auto;
-    width: calc(100% / 1);
+    width: calc(25% - 0.375rem); /* 4 cards per slide with reduced gap */
   }
-   .cnc-machine-slide {
-    padding: 0; /* Remove padding */
-  }
+  
   .cnc-product-card {
-    margin: 0 0.25rem; /* Add small horizontal margin to cards */
+    margin: 0; /* Remove margin */
+    transition: transform 0.3s ease;
   }
-/* Add this to your CSS */
-.cnc-product-card {
-  overflow: hidden;
-}
-
-.cnc-product-image {
-  transition: transform 0.3s ease;
-}
-
-.cnc-product-card:hover .cnc-product-image {
-  transform: translateY(-10px);
-}
   
-  @media (min-width: 640px) {
+  .cnc-product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .cnc-product-image {
+    transition: transform 0.3s ease;
+  }
+  
+  .cnc-product-card:hover .cnc-product-image {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 1024px) {
     .cnc-machine-slide {
-      width: calc(100% / 2);
+      width: calc(33.333% - 0.333rem); /* 3 cards on smaller screens */
     }
   }
   
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .cnc-machine-slide {
-      width: calc(100% / 3);
+      width: calc(50% - 0.25rem); /* 2 cards on mobile */
     }
   }
   
-  @media (min-width: 1024px) {
+  @media (max-width: 480px) {
     .cnc-machine-slide {
-      width: calc(100% / 4);
+      width: 100%; /* 1 card on very small screens */
     }
   }

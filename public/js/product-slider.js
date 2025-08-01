@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
   const track = document.querySelector('.cnc-machine-track');
   const slides = Array.from(document.querySelectorAll('.cnc-machine-slide'));
@@ -5,49 +6,52 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextBtn = document.querySelector('.cnc-carousel-next');
   
   let currentIndex = 0;
-  let slideWidth = slides[0].getBoundingClientRect().width;
-  const gap = 1; // This matches the gap-1 (0.25rem = 4px)
+  const cardsPerSlide = 4;
+  const totalSlides = Math.ceil(slides.length / cardsPerSlide);
   
-  // Set initial position
-  updateTrackPosition();
+  function updateTrackPosition() {
+    const slideWidth = slides[0].offsetWidth + 8; // card width + gap
+    const offset = -currentIndex * cardsPerSlide * slideWidth;
+    track.style.transform = `translateX(${offset}px)`;
+  }
   
   // Next button click handler
   nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateTrackPosition();
-    resetAutoSlide();
+    if (currentIndex < totalSlides - 1) {
+      currentIndex++;
+      updateTrackPosition();
+      resetAutoSlide();
+    }
   });
   
   // Previous button click handler
   prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateTrackPosition();
-    resetAutoSlide();
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateTrackPosition();
+      resetAutoSlide();
+    }
   });
   
   // Auto-advance every 3 seconds
   let autoSlideInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length;
+    if (currentIndex < totalSlides - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
     updateTrackPosition();
   }, 3000);
-  
-  // Update track position based on currentIndex
-  function updateTrackPosition() {
-    const offset = -currentIndex * (slideWidth + gap);
-    track.style.transform = `translateX(${offset}px)`;
-  }
-  
-  // Handle window resize
-  function handleResize() {
-    slideWidth = slides[0].getBoundingClientRect().width;
-    updateTrackPosition();
-  }
   
   // Reset autoslide timer
   function resetAutoSlide() {
     clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % slides.length;
+      if (currentIndex < totalSlides - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
       updateTrackPosition();
     }, 3000);
   }
@@ -62,5 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
     resetAutoSlide();
   });
   
-  window.addEventListener('resize', handleResize);
+  // Handle window resize
+  window.addEventListener('resize', updateTrackPosition);
+  
+  // Initialize
+  updateTrackPosition();
 });
