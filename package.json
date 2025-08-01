@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:css": "tailwindcss -i ./assets/css/index.css -o ./assets/css/output.css --minify"
+    "build:css": "tailwindcss -i ./public/css/index.css -o ./public/css/output.css --minify"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
