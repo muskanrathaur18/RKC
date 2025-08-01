@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <link
       rel="icon"
-      type="public/images/extra-img/polypack-logo.png"
-      href="public/images/extra-img/polypack-logo.png"
+      type="src/images/logo.png"
+      href="src/images/logo.png"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="/css/header.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -27,12 +27,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="public/css/index.css" />
-    <link rel="stylesheet" href="public/css/output.css" />
-    <link rel="stylesheet" href="public/css/testimonial.css">
-    <link rel="stylesheet" href="public/css/gallery.css"/>
-    <link rel="stylesheet" href="public/css/styless.css" />
-    <link rel="stylesheet" href="public/css/product-slider.css"/>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <link rel="stylesheet" href="/css/testimonial.css">
+    <link rel="stylesheet" href="/css/gallery.css"/>
+    <link rel="stylesheet" href="/css/styless.css" />
+    <link rel="stylesheet" href="/css/product-slider.css"/>
     <title>RK corporation</title>
   </head>
 
@@ -42,7 +42,7 @@
     <!-- Other content -->
 
     <script>
-      fetch("header.html")
+      fetch("/header.html")
         .then((response) => response.text())
         .then((data) => {
           const navbarHeader = document.getElementById("navbar-header");
@@ -687,7 +687,7 @@
               rgba(255, 255, 255, 0.92),
               rgba(255, 255, 255, 0.95)
             ),
-            url('public/images/backgrounds/3.jpg');
+            url('/images/backgrounds/3.jpg');
         "
       >
         <!-- Animated background elements -->
@@ -1720,11 +1720,11 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <!-- <script rel="stylesheet" src="public/js/index.js"></script> -->
-    <script src="public/js/product-slider.js"></script>
-    <script src="public/js/navbar.js"></script>
-    <script src="public/js/gallery.js"></script>
-    <script src="public/js/Testimonial.js"></script>
+    <!-- <script rel="stylesheet" src="/js/index.js"></script> -->
+    <script src="/js/product-slider.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/gallery.js"></script>
+    <script src="/js/Testimonial.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </body>
 </html>
