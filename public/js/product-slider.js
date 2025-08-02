@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
   const track = document.querySelector('.cnc-machine-track');
   const slides = Array.from(document.querySelectorAll('.cnc-machine-slide'));
@@ -6,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextBtn = document.querySelector('.cnc-carousel-next');
   
   let currentIndex = 0;
-  const cardsPerSlide = 4;
+  const cardsPerSlide = 5; // Changed from 4 to 5
   const totalSlides = Math.ceil(slides.length / cardsPerSlide);
   
   function updateTrackPosition() {

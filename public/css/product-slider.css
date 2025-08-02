@@ -13,7 +13,7 @@
   
   .cnc-machine-slide {
     flex: 0 0 auto;
-    width: calc(25% - 0.375rem); /* 4 cards per slide with reduced gap */
+    width: calc(20% - 0.3rem); /* 4 cards per slide with reduced gap */
   }
   
   .cnc-product-card {
@@ -34,19 +34,19 @@
   }
   
   @media (max-width: 1024px) {
-    .cnc-machine-slide {
-      width: calc(33.333% - 0.333rem); /* 3 cards on smaller screens */
-    }
+  .cnc-machine-slide {
+    width: calc(25% - 0.25rem); /* 4 cards on smaller screens */
   }
-  
-  @media (max-width: 768px) {
-    .cnc-machine-slide {
-      width: calc(50% - 0.25rem); /* 2 cards on mobile */
-    }
+}
+
+@media (max-width: 768px) {
+  .cnc-machine-slide {
+    width: calc(33.333% - 0.2rem); /* 3 cards on tablets */
   }
-  
-  @media (max-width: 480px) {
-    .cnc-machine-slide {
-      width: 100%; /* 1 card on very small screens */
-    }
+}
+
+@media (max-width: 480px) {
+  .cnc-machine-slide {
+    width: calc(50% - 0.15rem); /* 2 cards on mobile */
   }
+}
